@@ -1,9 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from '.'
+import { Admin, Resource } from 'react-admin'
+import dataProvider from './dataProvider/dataProvider'
+import { CostsDataManagementCreate, CostsDataManagementList } from './resources/costs'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <Admin dataProvider={dataProvider}>
+      <Resource name="costs" list={CostsDataManagementList} create={CostsDataManagementCreate} />
+    </Admin>
   </React.StrictMode>,
 )
