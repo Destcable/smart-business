@@ -1,49 +1,25 @@
 import queryClient from "../queryClient";
 import { ICreateParams } from "./interfaces";
 import { 
-    create as TOPIC_CREATE 
-} from "../gql/topic";
-import { 
-    create as THEME_CREATE 
-} from "../gql/theme";
-import { 
-    create as TASK_CREATE 
-} from "../gql/task";
-import { 
-    create as GROUP_CREATE 
-} from "../gql/group";
-import { 
-    create as USER_CREATE 
-} from "../gql/user";
+    create as ONE_COST_CREATE 
+} from "../gql/cost";
 
 const create = (resource: string, params: ICreateParams) => { 
     let mutation: any;
     
     switch (resource) { 
-        case 'topic':
-            mutation = TOPIC_CREATE;
-            break;
-        case 'theme':
-            mutation = THEME_CREATE;
-            break;
-        case 'task':
-            mutation = TASK_CREATE;
-            break;
-        case 'group': 
-            mutation = GROUP_CREATE;
-            break;
-        case 'user':
-            mutation = USER_CREATE;
-            break;
+        case 'costs':
+            mutation = ONE_COST_CREATE;
+            break; 
     }
 
     return queryClient
     .mutate({
         mutation: mutation,
-        variables: params.data,
+        variables: { input: params.data},
     })
     .then(data => { 
-        return { data: data.data.data, id: data.data.data.id } } );
+        return { data: data.data.item, id: data.data.item.id } } );
 
 };
 
