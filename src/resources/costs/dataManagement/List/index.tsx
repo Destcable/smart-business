@@ -1,9 +1,18 @@
 import { Datagrid, List, TextField } from "react-admin";
+import { CardHeader } from '@mui/material';
 
 export default function CostsDataManagementList() {
-    return <List>
-        <Datagrid>
-            <TextField source="id" />
-        </Datagrid>
-    </List>
+    return <>
+        <CardHeader title="Таблица: Расходы" subheader="Таблица Расходы: предназначена для управления данными о расходах компании. Она предоставляет пользователям возможность просматривать, фильтровать, сортировать, редактировать и добавлять новые записи о расходах."/>
+        <List>
+            <Datagrid>
+                <TextField source="dateCost" label="Дата транзакции" />
+                <TextField source="category" label="Категория" />
+                <TextField source="amount" label="Сумма" />
+                <TextField source="description" label="Описание" />
+                <TextField source="project" label="Проект" />
+                <TextField source="counterparty" label="Контрагент" />
+            </Datagrid>
+        </List>
+    </>
 }
