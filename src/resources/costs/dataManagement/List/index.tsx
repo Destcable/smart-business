@@ -1,4 +1,4 @@
-import { Datagrid, DateField, List, NumberField, TextField } from "react-admin";
+import { Datagrid, DateField, List, TextField } from "react-admin";
 import { CardHeader } from '@mui/material';
 import CostsDataManagementListActions from "./CostsDataManagementListActions";
 
@@ -12,7 +12,7 @@ export default function CostsDataManagementList() {
             <Datagrid>
                 <DateField source="dateCost" label="Дата транзакции" showTime />
                 <TextField source="category" label="Категория" />
-                <NumberField source="amount" label="Сумма" />
+                <TextField source="amount" label="Сумма" />
                 <TextField source="description" label="Описание" />
                 <TextField source="project" label="Проект" />
                 <TextField source="counterparty" label="Контрагент" />
