@@ -5,9 +5,14 @@ import dataProvider from './dataProvider/dataProvider'
 import { CostsDataManagementCreate, CostsDataManagementList } from './resources/costs'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Admin dataProvider={dataProvider}>
-      <Resource name="costs" list={CostsDataManagementList} create={CostsDataManagementCreate} />
-    </Admin>
-  </React.StrictMode>,
+    <React.StrictMode>
+        <Admin dataProvider={dataProvider}>
+            <Resource
+                name="costs" 
+                list={CostsDataManagementList} 
+                create={CostsDataManagementCreate} 
+                options={{ label: "Расходы: Управление данными" }} 
+            />
+        </Admin>
+    </React.StrictMode>,
 )
