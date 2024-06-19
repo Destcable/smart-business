@@ -1,39 +1,15 @@
 import queryClient from "../queryClient";
 import parseData from "../parseData";
 import { 
-    deleteMany as DELETE_MANY_GROUP
-} from "../gql/group";
-import { 
-    deleteMany as DELETE_MANY_USER
-} from "../gql/user";
-import { 
-    deleteMany as DELETE_MANY_TOPIC
-} from "../gql/topic";
-import { 
-    deleteMany as DELETE_MANY_THEME
-} from "../gql/theme";
-import { 
-    deleteMany as DELETE_MANY_TASK
-} from "../gql/task";
+    deleteMany as DELETE_MANY_COST
+} from "../gql/cost";
 
 const deleteMany = (resource: string, params: any) => {
     let mutation: any;
 
     switch (resource) {
-        case 'group':
-            mutation = DELETE_MANY_GROUP;
-            break;
-        case 'user':
-            mutation = DELETE_MANY_USER;
-            break;
-        case 'topic':
-            mutation = DELETE_MANY_TOPIC;
-            break;
-        case 'theme':
-            mutation = DELETE_MANY_THEME;
-            break;
-        case 'task':
-            mutation = DELETE_MANY_TASK;
+        case 'costs':
+            mutation = DELETE_MANY_COST;
             break;
     }
     
@@ -41,8 +17,8 @@ const deleteMany = (resource: string, params: any) => {
         mutation: mutation,
         variables: { ids: params.ids}
     }).then(data => ({ 
-            data: data.data.data.map(parseData), 
-            total: data.data.data.length 
+            data: data.data.item.map(parseData), 
+            total: data.data.item.length 
         })
     );
 };
