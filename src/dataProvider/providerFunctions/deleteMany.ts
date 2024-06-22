@@ -3,6 +3,9 @@ import parseData from "../parseData";
 import { 
     deleteMany as DELETE_MANY_COST
 } from "../gql/cost";
+import { 
+    deleteMany as DELETE_MANY_CATEGORY
+} from "../gql/category";
 
 const deleteMany = (resource: string, params: any) => {
     let mutation: any;
@@ -10,6 +13,9 @@ const deleteMany = (resource: string, params: any) => {
     switch (resource) {
         case 'costs/data':
             mutation = DELETE_MANY_COST;
+            break;
+        case 'costs/categories':
+            mutation = DELETE_MANY_CATEGORY;
             break;
     }
     
