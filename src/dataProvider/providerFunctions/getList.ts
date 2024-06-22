@@ -3,6 +3,9 @@ import parseData from "../parseData";
 import { 
     getList as GET_LIST_COST
 } from "../gql/cost";
+import { 
+    getList as GET_LIST_CATEGORY
+} from "../gql/category";
 
 const getList = (resource: any) => {
     let query: any;
@@ -10,6 +13,9 @@ const getList = (resource: any) => {
     switch (resource) {
         case 'costs/data': 
             query = GET_LIST_COST;
+            break;
+        case 'costs/categories':
+            query = GET_LIST_CATEGORY;
             break;
     }
     

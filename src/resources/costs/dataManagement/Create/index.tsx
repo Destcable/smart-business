@@ -9,7 +9,7 @@ export default function CostsDataManagementCreate() {
     return <div>
         <Button
             variant="text"
-            onClick={() => redirect('list', '/costs')}
+            onClick={() => redirect('list', '/costs/data')}
         >
             <img src={BackArrow} style={{ marginRight: '8px'}}/>
             Назад
