@@ -1,7 +1,7 @@
 import queryClient from "../queryClient";
 import { 
     getMany as GET_MANY_CATEGORY
-} from "../gql/topic";
+} from "../gql/category";
 
 const getMany = (resource: string, params: any) => { 
     let query: any;
