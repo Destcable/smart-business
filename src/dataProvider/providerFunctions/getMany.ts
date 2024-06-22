@@ -1,32 +1,14 @@
 import queryClient from "../queryClient";
 import { 
-    getMany as GET_MANY_TOPIC
+    getMany as GET_MANY_CATEGORY
 } from "../gql/topic";
-import { 
-    getMany as GET_MANY_THEME
-} from "../gql/theme";
-import { 
-    getMany as GET_MANY_USER
-} from "../gql/user";
-import { 
-    getMany as GET_MANY_GROUP
-} from "../gql/group";
 
 const getMany = (resource: string, params: any) => { 
     let query: any;
 
     switch (resource) {
-        case 'topic':
-            query = GET_MANY_TOPIC;
-            break;
-        case 'theme': 
-            query = GET_MANY_THEME;
-            break;
-        case 'user':
-            query = GET_MANY_USER;
-            break;
-        case 'group':
-            query = GET_MANY_GROUP;
+        case 'costs/categories':
+            query = GET_MANY_CATEGORY
             break;
     }
     
