@@ -3,6 +3,9 @@ import { ICreateParams } from "./interfaces";
 import { 
     create as ONE_COST_CREATE 
 } from "../gql/cost";
+import { 
+    create as ONE_CATEGORY_CREATE 
+} from "../gql/category";
 
 const create = (resource: string, params: ICreateParams) => { 
     let mutation: any;
@@ -11,6 +14,9 @@ const create = (resource: string, params: ICreateParams) => {
         case 'costs/data':
             mutation = ONE_COST_CREATE;
             break; 
+        case 'costs/categories':
+            mutation = ONE_CATEGORY_CREATE;
+            break;
     }
 
     return queryClient
