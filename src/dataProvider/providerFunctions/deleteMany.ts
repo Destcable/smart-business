@@ -8,7 +8,7 @@ const deleteMany = (resource: string, params: any) => {
     let mutation: any;
 
     switch (resource) {
-        case 'costs':
+        case 'costs/data':
             mutation = DELETE_MANY_COST;
             break;
     }

@@ -8,7 +8,7 @@ const create = (resource: string, params: ICreateParams) => {
     let mutation: any;
     
     switch (resource) { 
-        case 'costs':
+        case 'costs/data':
             mutation = ONE_COST_CREATE;
             break; 
     }

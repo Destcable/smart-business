@@ -8,7 +8,7 @@ const getList = (resource: any) => {
     let query: any;
 
     switch (resource) {
-        case 'costs': 
+        case 'costs/data': 
             query = GET_LIST_COST;
             break;
     }
