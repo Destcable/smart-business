@@ -1,5 +1,5 @@
 import { CardHeader } from "@mui/material";
-import CostsSettingsCategoryList from "./CostsSettingsCategoryList";
+import CostsSettingsCategoryList from "./Category/List";
 
 export default function CostsSettingsView() {
     

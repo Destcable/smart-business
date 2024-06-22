@@ -1,8 +1,12 @@
 import { CardHeader } from "@mui/material";
 import { Datagrid, List, TextField } from "react-admin";
+import CostsSettingsCategoryListActions from "./CostsSettingsCategoryListActions";
 
 export default function CostsSettingsCategoryList() {
-    return <List resource="costs/categories">
+    return <List
+        actions={<CostsSettingsCategoryListActions />} 
+        resource="costs/categories"
+    >
         <CardHeader
             titleTypographyProps={{ variant:'subtitle1' }}
             subheaderTypographyProps={{ variant: 'subtitle2' }}
