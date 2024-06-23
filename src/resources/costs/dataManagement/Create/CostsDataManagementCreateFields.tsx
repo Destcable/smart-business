@@ -1,10 +1,10 @@
-import { AutocompleteInput, DateTimeInput, NumberInput, ReferenceInput, TextInput } from "react-admin";
+import { AutocompleteInput, DateTimeInput, NumberInput, ReferenceInput, required, TextInput } from "react-admin";
 
 export default function CostsDataManagementCreateFields() {
     return <>
         <DateTimeInput source="dateCost" label="Дата транзакции" fullWidth required />
-        <ReferenceInput source="categoryId" reference="costs/categories" isRequired={true}>
-            <AutocompleteInput label="Категория" optionText="name" fullWidth isRequired={true}/>
+        <ReferenceInput source="categoryId" reference="costs/categories" >
+            <AutocompleteInput label="Категория" optionText="name" fullWidth validate={[required()]}/>
         </ReferenceInput>
         <NumberInput source="amount" label="Сумма" fullWidth required />
         <TextInput source="project" label="Проект" fullWidth required />

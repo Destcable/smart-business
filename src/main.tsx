@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Admin, Resource } from 'react-admin'
 import dataProvider from './dataProvider/dataProvider'
-import { CostsDataManagementCreate, CostsDataManagementList, CostsSettingsCategoryCreate, CostsSettingsView } from './resources/costs'
+import { CostsDataManagementCreate, CostsDataManagementList, CostsSettingsCategoryCreate, CostsSettingsCustomFieldsCreate, CostsSettingsView } from './resources/costs'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -22,6 +22,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 name="costs/categories"
                 create={CostsSettingsCategoryCreate}
                 options={{ label: "Расходы: Настройки"}}
+            />
+            <Resource 
+                name="costs/customFields"
+                create={CostsSettingsCustomFieldsCreate}
             />
         </Admin>
     </React.StrictMode>,
