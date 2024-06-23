@@ -22,10 +22,10 @@ const getList = (resource: any) => {
     return queryClient.query({
         query: query,
         variables: {}
-    }).then(data => ({ 
-            data: data.data.items.map(parseData), 
-            total: data.data.items.length 
-        })
+    }).then(data => { 
+            return {data: data.data.items.map(parseData), 
+            total: data.data.items.length}
+        }
     );
 };
 

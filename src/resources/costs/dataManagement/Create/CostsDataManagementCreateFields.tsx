@@ -3,8 +3,8 @@ import { AutocompleteInput, DateTimeInput, NumberInput, ReferenceInput, TextInpu
 export default function CostsDataManagementCreateFields() {
     return <>
         <DateTimeInput source="dateCost" label="Дата транзакции" fullWidth required />
-        <ReferenceInput source="category" reference="costs/categories" isRequired={true}>
-            <AutocompleteInput source="name" label="Категория" optionText="name" fullWidth isRequired={true}/>
+        <ReferenceInput source="categoryId" reference="costs/categories" isRequired={true}>
+            <AutocompleteInput label="Категория" optionText="name" fullWidth isRequired={true}/>
         </ReferenceInput>
         <NumberInput source="amount" label="Сумма" fullWidth required />
         <TextInput source="project" label="Проект" fullWidth required />

@@ -4,7 +4,11 @@ export const getList = gql`
 query getListCost {
   items: getListCost {
     amount
-    category
+    category {
+      id
+      for
+      name
+    }
     counterparty
     dateCost
     description

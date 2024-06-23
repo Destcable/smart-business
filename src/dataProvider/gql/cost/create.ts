@@ -4,7 +4,9 @@ export const create = gql`
     mutation CreateCost($input: CostCreateInput!) {
         item: createCost(input: $input) {
             amount
-            category
+            category {
+                name
+            }
             counterparty
             description
             dateCost

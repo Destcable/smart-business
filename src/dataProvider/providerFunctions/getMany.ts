@@ -14,9 +14,13 @@ const getMany = (resource: string, params: any) => {
     
     return queryClient.query({
         query: query,
-        variables: { ids: params.ids }
+        variables: { 
+            ids: params.ids.map(id => id.id || id)
+        }
+        // variables: { ids: params.ids }
     }).then(data => {
-        return {data: data.data.data }
+        const formattedData = data.data.data.map((item, index) => ({ ...item, id: params.ids[index] }));
+        return { data: formattedData };
     });
 
 };
