@@ -1,11 +1,8 @@
 import queryClient from "../queryClient";
 import { ICreateParams } from "./interfaces";
-import { 
-    create as ONE_COST_CREATE 
-} from "../gql/cost";
-import { 
-    create as ONE_CATEGORY_CREATE 
-} from "../gql/category";
+import { create as ONE_COST_CREATE } from "../gql/cost";
+import { create as ONE_CATEGORY_CREATE } from "../gql/category";
+import { create as ONE_CUSTOM_FIELD_CREATE } from "../gql/customField";
 
 const create = (resource: string, params: ICreateParams) => { 
     let mutation: any;
@@ -16,6 +13,9 @@ const create = (resource: string, params: ICreateParams) => {
             break; 
         case 'costs/categories':
             mutation = ONE_CATEGORY_CREATE;
+            break;
+        case 'costs/customFields':
+            mutation = ONE_CUSTOM_FIELD_CREATE;
             break;
     }
 

@@ -40,7 +40,7 @@ export default function CostsSettingsCustomFieldsCreate() {
                             { id: "BOOLEAN", name: "BOOLEAN" },
                         ]}
                     />
-                    <BooleanInput source="isRequired" label="Обязательное поле" fullWidth required/>
+                    <BooleanInput source="isRequired" label="Обязательное поле" fullWidth/>
                 </SimpleForm>
             </Create>
         </div>

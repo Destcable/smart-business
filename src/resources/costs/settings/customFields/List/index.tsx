@@ -1,5 +1,5 @@
 import { CardHeader } from "@mui/material";
-import { Datagrid, List, TextField } from "react-admin";
+import { BooleanField, Datagrid, List, TextField } from "react-admin";
 import CostsSettingsCustomFieldsListActions from "./CostsSettingsCustomFieldsListActions";
 
 export default function CostsSettingsCustomFieldsList() {
@@ -16,6 +16,8 @@ export default function CostsSettingsCustomFieldsList() {
         />
         <Datagrid>
             <TextField source="name" />
+            <TextField source="type" />
+            <BooleanField source="isRequired" />
         </Datagrid>
     </List>
 }
