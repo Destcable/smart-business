@@ -14,10 +14,12 @@ export default function CostsDataManagementList() {
                 <ReferenceField source="category.id" reference="costs/categories" label="Категория">
                     <TextField source="name"/>
                 </ReferenceField>
+                <ReferenceField source="counterparty.id" reference="counterparty" label="Контрагент">
+                    <TextField source="name"/>
+                </ReferenceField>
                 <TextField source="amount" label="Сумма" />
                 <TextField source="description" label="Описание" />
                 <TextField source="project" label="Проект" />
-                <TextField source="counterparty" label="Контрагент" />
             </Datagrid>
         </List>
     </>

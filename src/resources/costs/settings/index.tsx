@@ -1,6 +1,5 @@
 import { CardHeader } from "@mui/material";
 import CostsSettingsCategoryList from "./category/List";
-import CostsSettingsCustomFieldsList from "./customFields/List";
 
 export default function CostsSettingsView() {
     
@@ -9,6 +8,6 @@ export default function CostsSettingsView() {
             title="Расходы: Настройки"
         />
         <CostsSettingsCategoryList />
-        <CostsSettingsCustomFieldsList />
+        {/* <CostsSettingsCustomFieldsList /> */}
     </>
 }

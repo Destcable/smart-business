@@ -9,6 +9,10 @@ export const deleteMany = gql`
                 for
                 name
             }
+                    counterparty {
+      id
+      name
+    }
             counterparty
             description
             id

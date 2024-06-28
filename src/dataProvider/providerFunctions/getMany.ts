@@ -1,7 +1,6 @@
 import queryClient from "../queryClient";
-import { 
-    getMany as GET_MANY_CATEGORY
-} from "../gql/category";
+import { getMany as GET_MANY_CATEGORY } from "../gql/category";
+import { getMany as GET_MANY_COUNTERPARTY } from "../gql/counterparty";
 
 const getMany = (resource: string, params: any) => { 
     let query: any;
@@ -9,6 +8,9 @@ const getMany = (resource: string, params: any) => {
     switch (resource) {
         case 'costs/categories':
             query = GET_MANY_CATEGORY
+            break;
+        case 'counterparty': 
+            query = GET_MANY_COUNTERPARTY;
             break;
     }
     

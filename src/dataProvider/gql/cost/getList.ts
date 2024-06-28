@@ -5,11 +5,14 @@ query getListCost {
   items: getListCost {
     amount
     category {
-      id
       for
+      id
       name
     }
-    counterparty
+    counterparty {
+      id
+      name
+    }
     dateCost
     description
     id
