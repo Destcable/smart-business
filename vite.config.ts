@@ -4,10 +4,10 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // resolve: {
-  //   alias: { 
-  //     '@res': '/src/ui',
-  //     '@containers': '/src/containers',
-  //   }
-  // },
+  resolve: {
+    alias: { 
+      '@resources': '/src/resources',
+      '@containers': '/src/containers',
+    }
+  },
 })

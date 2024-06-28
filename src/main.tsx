@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Admin, Resource } from 'react-admin'
-import dataProvider from './dataProvider/dataProvider'
+import dataProvider from '../dataProvider/dataProvider'
 import { CostsDataManagementCreate, CostsDataManagementList, CostsSettingsCategoryCreate, CostsSettingsCustomFieldsCreate, CostsSettingsView } from './resources/costs'
 import { CounterpartyCreate, CounterpartyList } from './resources/counterparty'
 
