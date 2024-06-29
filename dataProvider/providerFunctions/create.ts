@@ -4,6 +4,7 @@ import { create as ONE_COST_CREATE } from "../gql/cost";
 import { create as ONE_CATEGORY_CREATE } from "../gql/category";
 import { create as ONE_CUSTOM_FIELD_CREATE } from "../gql/customField";
 import { create as ONE_COUNTERPARTY_CREATE } from "../gql/counterparty";
+import { create as ONE_PROJECT_CREATE } from "../gql/project";
 
 const create = (resource: string, params: ICreateParams) => { 
     let mutation: any;
@@ -20,6 +21,9 @@ const create = (resource: string, params: ICreateParams) => {
             break;
         case 'counterparty':
             mutation = ONE_COUNTERPARTY_CREATE;
+            break;
+        case 'project':
+            mutation = ONE_PROJECT_CREATE;
             break;
     }
 

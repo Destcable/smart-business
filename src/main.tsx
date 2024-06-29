@@ -4,10 +4,17 @@ import { Admin, Resource } from 'react-admin'
 import dataProvider from '../dataProvider/dataProvider'
 import { CostsDataManagementCreate, CostsDataManagementList, CostsSettingsCategoryCreate, CostsSettingsCustomFieldsCreate, CostsSettingsView } from './resources/costs'
 import { CounterpartyCreate, CounterpartyList } from './resources/counterparty'
+import { ProjectCreate, ProjectList } from './resources/project'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
         <Admin dataProvider={dataProvider}>
+            <Resource
+                name="project"
+                list={ProjectList}
+                create={ProjectCreate}
+                options={{ label: "Проекты" }}
+            />
             <Resource
                 name="counterparty"
                 list={CounterpartyList}

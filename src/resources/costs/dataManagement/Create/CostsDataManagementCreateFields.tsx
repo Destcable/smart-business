@@ -9,8 +9,10 @@ export default function CostsDataManagementCreateFields() {
         <ReferenceInput source="counterpartyId" reference="counterparty" >
             <AutocompleteInput label="Контрагент" optionText="name" fullWidth validate={[required()]}/>
         </ReferenceInput>
+        <ReferenceInput source="projectId" reference="project" >
+            <AutocompleteInput label="Проект" optionText="name" fullWidth validate={[required()]}/>
+        </ReferenceInput>
         <NumberInput source="amount" label="Сумма" fullWidth required />
-        <TextInput source="project" label="Проект" fullWidth required />
         <TextInput multiline={true} source="description" label="Описание" fullWidth required />
     </>
 }

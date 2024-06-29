@@ -3,10 +3,12 @@ import { gql } from "@apollo/client";
 export const getList = gql`
 query getListCost {
   items: getListCost {
+    id
+    description
     amount
     category {
-      for
       id
+      for
       name
     }
     counterparty {
@@ -14,9 +16,10 @@ query getListCost {
       name
     }
     dateCost
-    description
-    id
-    project
+    project {
+      id
+      name
+    }
   }
 }
 `;

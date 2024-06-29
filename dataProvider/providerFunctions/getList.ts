@@ -4,6 +4,7 @@ import { getList as GET_LIST_COST } from "../gql/cost";
 import { getList as GET_LIST_CATEGORY } from "../gql/category";
 import { getList as GET_LIST_CUSTOM_FIELD } from "../gql/customField";
 import { getList as GET_LIST_COUNTERPARTY } from "../gql/counterparty";
+import { getList as GET_LIST_PROJECT } from "../gql/project";
 
 const getList = (resource: any) => {
     let query: any;
@@ -20,6 +21,9 @@ const getList = (resource: any) => {
             break;
         case 'counterparty':
             query = GET_LIST_COUNTERPARTY;
+            break;
+        case 'project':
+            query = GET_LIST_PROJECT;
             break;
     }
     
