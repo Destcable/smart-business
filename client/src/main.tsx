@@ -1,13 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { FluentProvider, webLightTheme } from '@fluentui/react-components'
-import Layout from '@pages/Dashboard/Dashboard'
-import './global.css';
+import { createRoot } from 'react-dom/client';
+import { FluentProvider, webLightTheme } from '@fluentui/react-components';
+import Dashboard from '@pages/Dashboard/Dashboard';
+import './global.css'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-    <React.StrictMode>
-        <FluentProvider theme={webLightTheme}>
-            <Layout />
-        </FluentProvider>
-    </React.StrictMode>,
-)
+const root = createRoot(document.getElementById('root')!);
+
+root.render(
+    <FluentProvider theme={webLightTheme}>
+        <Dashboard />
+    </FluentProvider>,
+);

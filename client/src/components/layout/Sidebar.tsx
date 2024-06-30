@@ -17,7 +17,6 @@ const useStyles = makeStyles({
 
 const Sidebar: React.FC = () => {
 	const styles = useStyles();
-	console.log(1);
 	return (
 		<div className={styles.sidebar}>
 			<Tree aria-label="Default">
