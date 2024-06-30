@@ -27,7 +27,18 @@ const Sidebar: React.FC = () => {
 	return (
 		<div className={styles.sidebar}>
 			<Tree aria-label="Default">
-			<TreeItem itemType="branch">
+				<TreeItem itemType="branch">
+					<TreeItemLayout>Проекты</TreeItemLayout>
+					<Tree>
+						<TreeItem itemType="leaf">
+							<TreeItemLayout>Управление данными</TreeItemLayout>
+						</TreeItem>
+						<TreeItem itemType="leaf">
+							<TreeItemLayout>Настройки</TreeItemLayout>
+						</TreeItem>
+					</Tree>
+				</TreeItem>
+				<TreeItem itemType="branch">
 					<TreeItemLayout>Расходы</TreeItemLayout>
 					<Tree>
 						<TreeItem itemType="leaf">
@@ -41,7 +52,7 @@ const Sidebar: React.FC = () => {
 				<TreeItem itemType="branch">
 					<TreeItemLayout>Доходы</TreeItemLayout>
 					<Tree>
-					<TreeItem itemType="leaf">
+						<TreeItem itemType="leaf">
 							<TreeItemLayout>Управление данными</TreeItemLayout>
 						</TreeItem>
 						<TreeItem itemType="leaf">
@@ -50,15 +61,10 @@ const Sidebar: React.FC = () => {
 					</Tree>
 				</TreeItem>
 				<TreeItem itemType="branch">
-					<TreeItemLayout>level 1, item 2</TreeItemLayout>
+					<TreeItemLayout>Справочники</TreeItemLayout>
 					<Tree>
-						<TreeItem itemType="branch">
-							<TreeItemLayout>level 2, item 1</TreeItemLayout>
-							<Tree>
-								<TreeItem itemType="leaf">
-									<TreeItemLayout>level 3, item 1</TreeItemLayout>
-								</TreeItem>
-							</Tree>
+						<TreeItem itemType="leaf">
+							<TreeItemLayout>Контрагенты</TreeItemLayout>
 						</TreeItem>
 					</Tree>
 				</TreeItem>
