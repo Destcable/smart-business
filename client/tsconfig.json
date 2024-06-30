@@ -22,7 +22,8 @@
     "noFallthroughCasesInSwitch": true,
 
     "paths": {
-      "@resources/*": ["src/resources/*"]
+      // "@resources/*": ["src/resources/*"],
+      "@pages/*": ["src/pages/*"]
     }
   },
   "include": ["src"],

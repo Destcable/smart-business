@@ -29,14 +29,18 @@ const getList = (resource: any) => {
         case 'project/data':
             query = GET_LIST_PROJECT;
             break;
+        default:
+            throw new Error(`Unknown resource: ${resource}`);
     }
     
     return queryClient.query({
         query: query,
         variables: {}
     }).then(data => { 
-            return {data: data.data.items.map(parseData), 
-            total: data.data.items.length}
+            return {
+                data: data.data.items.map(parseData), 
+                total: data.data.items.length
+            };
         }
     );
 };

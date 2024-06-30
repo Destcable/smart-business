@@ -7,6 +7,7 @@ export default defineConfig({
   resolve: {
     alias: { 
       '@resources': '/src/resources',
+      '@pages': '/src/pages'
     }
   },
 })
