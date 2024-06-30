@@ -7,7 +7,6 @@ export default defineConfig({
   resolve: {
     alias: { 
       '@resources': '/src/resources',
-      '@containers': '/src/containers',
     }
   },
 })

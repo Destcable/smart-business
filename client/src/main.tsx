@@ -2,11 +2,17 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Admin, Resource } from 'react-admin'
 import dataProvider from '../dataProvider/dataProvider'
-import { CostsDataManagementCreate, CostsDataManagementList, CostsSettingsCategoryCreate, CostsSettingsCustomFieldsCreate, CostsSettingsView } from './resources/costs'
-import { CounterpartyCreate, CounterpartyList } from './resources/counterparty'
-import { ProjectCreate, ProjectList } from './resources/project'
 import { FluentProvider, webLightTheme } from '@fluentui/react-components'
-import { IncomeDataManagementCreate, IncomeDataManagementList } from './resources/income'
+import { 
+    CostsDataManagementCreate, 
+    CostsDataManagementList, 
+    CostsSettingsCategoryCreate, 
+    CostsSettingsCustomFieldsCreate, 
+    CostsSettingsView 
+} from '@resources/costs'
+import { CounterpartyCreate, CounterpartyList } from '@resources/counterparty'
+import { ProjectCreate, ProjectList } from '@resources/project'
+import { IncomeDataManagementCreate, IncomeDataManagementList } from '@resources/income'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
