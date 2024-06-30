@@ -26,7 +26,7 @@ const create = (resource: string, params: ICreateParams) => {
         case 'counterparty':
             mutation = ONE_COUNTERPARTY_CREATE;
             break;
-        case 'project':
+        case 'project/data':
             mutation = ONE_PROJECT_CREATE;
             break;
     }

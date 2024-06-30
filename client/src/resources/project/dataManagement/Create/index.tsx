@@ -1,8 +1,8 @@
 import { Button } from "@mui/material";
 import { Create, SimpleForm, TextInput, useRedirect } from "react-admin";
-import BackArrow from "../../../icons/backArrow.png";
+import BackArrow from "../../../../icons/backArrow.png";
 
-export default function ProjectCreate() {
+export default function ProjectDataManagementCreate() {
     const redirect = useRedirect();
 
     return <div>

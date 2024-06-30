@@ -17,7 +17,7 @@ export default function CostsDataManagementList() {
                 <ReferenceField source="counterparty.id" reference="counterparty" label="Контрагент">
                     <TextField source="name"/>
                 </ReferenceField>
-                <ReferenceField source="project.id" reference="project" label="Проект">
+                <ReferenceField source="project.id" reference="project/data" label="Проект">
                     <TextField source="name"/>
                 </ReferenceField>
                 <TextField source="amount" label="Сумма" />

@@ -11,7 +11,7 @@ import {
     CostsSettingsView 
 } from '@resources/costs'
 import { CounterpartyCreate, CounterpartyList } from '@resources/counterparty'
-import { ProjectCreate, ProjectList } from '@resources/project'
+import { ProjectDataManagementCreate, ProjectDataManagementList } from '@resources/project'
 import { IncomeDataManagementCreate, IncomeDataManagementList } from '@resources/income'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -19,10 +19,10 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <FluentProvider theme={webLightTheme}>
             <Admin dataProvider={dataProvider}>
                 <Resource
-                    name="project"
-                    list={ProjectList}
-                    create={ProjectCreate}
-                    options={{ label: "Проекты" }}
+                    name="project/data"
+                    list={ProjectDataManagementList}
+                    create={ProjectDataManagementCreate}
+                    options={{ label: "Проекты: Управление данными" }}
                 />
                 <Resource
                     name="counterparty"

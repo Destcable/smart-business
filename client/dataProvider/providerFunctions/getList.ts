@@ -26,7 +26,7 @@ const getList = (resource: any) => {
         case 'counterparty':
             query = GET_LIST_COUNTERPARTY;
             break;
-        case 'project':
+        case 'project/data':
             query = GET_LIST_PROJECT;
             break;
     }

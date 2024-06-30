@@ -13,7 +13,7 @@ const getMany = (resource: string, params: any) => {
         case 'counterparty': 
             query = GET_MANY_COUNTERPARTY;
             break;
-        case 'project': 
+        case 'project/data': 
             query = GET_MANY_PROJECT;
             break;
     }

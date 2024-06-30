@@ -1,7 +1,7 @@
-import ProjectCreate from "./Create";
-import ProjectList from "./List";
+import ProjectDataManagementCreate from "./dataManagement/Create";
+import ProjectDataManagementList from "./dataManagement/List";
 
 export { 
-    ProjectList,
-    ProjectCreate
+    ProjectDataManagementList,
+    ProjectDataManagementCreate
 }

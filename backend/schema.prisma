@@ -39,6 +39,14 @@ model Income {
     project         Project             @relation(fields: [projectId], references: [id])
 }
 
+model Project { 
+    id          Int         @id @default(autoincrement())
+    name        String      @unique
+    description String
+    costs       Cost[]
+    incomes     Income[]
+}
+
 model Category { 
     id          Int     @id @default(autoincrement())
     for         String
@@ -56,13 +64,6 @@ model CustomField {
 }
 
 model Counterparty { 
-    id          Int         @id @default(autoincrement())
-    name        String      @unique
-    costs       Cost[]
-    incomes     Income[]
-}
-
-model Project { 
     id          Int         @id @default(autoincrement())
     name        String      @unique
     costs       Cost[]

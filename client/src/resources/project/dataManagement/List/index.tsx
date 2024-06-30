@@ -1,7 +1,7 @@
 import { Datagrid, List, TextField } from "react-admin";
 import { CardHeader } from '@mui/material';
 
-export default function ProjectList() {
+export default function ProjectDataManagementList() {
     return <>
         <CardHeader
             title="Таблица: Проекты"
