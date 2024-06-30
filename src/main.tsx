@@ -6,6 +6,7 @@ import { CostsDataManagementCreate, CostsDataManagementList, CostsSettingsCatego
 import { CounterpartyCreate, CounterpartyList } from './resources/counterparty'
 import { ProjectCreate, ProjectList } from './resources/project'
 import { FluentProvider, webLightTheme } from '@fluentui/react-components'
+import { IncomeDataManagementCreate, IncomeDataManagementList } from './resources/income'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
     <React.StrictMode>
@@ -42,6 +43,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
                 <Resource
                     name="costs/customFields"
                     create={CostsSettingsCustomFieldsCreate}
+                />
+                <Resource
+                    name="income/data"
+                    list={IncomeDataManagementList}
+                    create={IncomeDataManagementCreate}
+                    options={{ label: "Доходы: Управление данными" }}
                 />
             </Admin>
         </FluentProvider>

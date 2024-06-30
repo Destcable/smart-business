@@ -5,6 +5,7 @@ import { getList as GET_LIST_CATEGORY } from "../gql/category";
 import { getList as GET_LIST_CUSTOM_FIELD } from "../gql/customField";
 import { getList as GET_LIST_COUNTERPARTY } from "../gql/counterparty";
 import { getList as GET_LIST_PROJECT } from "../gql/project";
+import { getList as GET_LIST_INCOME } from "../gql/income";
 
 const getList = (resource: any) => {
     let query: any;
@@ -18,6 +19,9 @@ const getList = (resource: any) => {
             break;
         case 'costs/customFields':
             query = GET_LIST_CUSTOM_FIELD;
+            break;
+        case 'income/data': 
+            query = GET_LIST_INCOME;
             break;
         case 'counterparty':
             query = GET_LIST_COUNTERPARTY;
