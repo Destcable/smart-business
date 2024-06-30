@@ -1,0 +1,20 @@
+type Query { 
+    getListCounterparty: [Counterparty]!
+    getManyCounterparty(ids: [Int]!): [Counterparty]!
+    # getOneCost(id: Int): Cost!
+    # getManyCost(ids: [Int]!): [Cost]!
+}
+
+type Mutation { 
+    createCounterparty(input: CounterpartyCreateInput!): Counterparty!
+    deleteManyCost(ids: [Int]!): [Cost]!
+}
+
+input CounterpartyCreateInput { 
+    name:           String!
+}
+
+type Counterparty {
+    id:             Int
+    name:           String
+}

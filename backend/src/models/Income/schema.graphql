@@ -1,0 +1,27 @@
+type Query { 
+    getListIncome: [Income]!
+}
+
+type Mutation { 
+    createIncome(input: IncomeCreateInput!): Income!
+    deleteManyIncome(ids: [Int]!): [Income]!
+}
+
+input IncomeCreateInput { 
+    dateIncome:     Date!
+    categoryId:     Int!
+    counterpartyId: Int!
+    projectId:      Int!
+    amount:         Int!
+    description:    String!
+}
+
+type Income {
+    id:             Int
+    dateIncome:     Date!
+    category:       Category!
+    amount:         Int!
+    description:    String!
+    project:        Project!
+    counterparty:   Counterparty!
+}

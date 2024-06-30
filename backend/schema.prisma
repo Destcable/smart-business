@@ -1,0 +1,70 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+enum eTypeCustomField { 
+    STRING
+    NUMBER
+    BOOLEAN
+}
+
+model Cost { 
+    id              Int                 @id @default(autoincrement())
+    categoryId      Int
+    counterpartyId  Int
+    projectId       Int
+    amount          Int
+    description     String
+    dateCost        DateTime
+    category        Category            @relation(fields: [categoryId], references: [id])
+    counterparty    Counterparty        @relation(fields: [counterpartyId], references: [id])
+    project         Project             @relation(fields: [projectId], references: [id])
+}
+
+model Income { 
+    id              Int                 @id @default(autoincrement())
+    categoryId      Int
+    counterpartyId  Int
+    projectId       Int
+    amount          Int
+    description     String
+    dateIncome      DateTime
+    category        Category            @relation(fields: [categoryId], references: [id])
+    counterparty    Counterparty        @relation(fields: [counterpartyId], references: [id])
+    project         Project             @relation(fields: [projectId], references: [id])
+}
+
+model Category { 
+    id          Int     @id @default(autoincrement())
+    for         String
+    name        String
+    costs       Cost[]
+    incomes     Income[]
+}
+
+model CustomField { 
+    id          Int     @id @default(autoincrement())
+    for         String
+    name        String  @unique
+    type        eTypeCustomField
+    isRequired  Boolean
+}
+
+model Counterparty { 
+    id          Int         @id @default(autoincrement())
+    name        String      @unique
+    costs       Cost[]
+    incomes     Income[]
+}
+
+model Project { 
+    id          Int         @id @default(autoincrement())
+    name        String      @unique
+    costs       Cost[]
+    incomes     Income[]
+}

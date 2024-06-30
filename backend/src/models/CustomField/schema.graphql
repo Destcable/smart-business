@@ -1,0 +1,31 @@
+type Query { 
+    getListCustomField: [CustomField]!
+    # getOneCost(id: Int): Cost!
+    # getManyCost(ids: [Int]!): [Cost]!
+}
+
+type Mutation { 
+    createCustomField(input: CustomFieldCreateInput!): CustomField!
+    # deleteManyCost(ids: [Int]!): [CustomField]!
+}
+
+input CustomFieldCreateInput { 
+    for:            String
+    name:           String
+    type:           eTypeCustomField
+    isRequired:     Boolean
+}
+
+type CustomField {
+    id:             Int
+    for:            String
+    name:           String
+    type:           eTypeCustomField
+    isRequired:     Boolean
+}
+
+enum eTypeCustomField { 
+    STRING
+    NUMBER
+    BOOLEAN
+}

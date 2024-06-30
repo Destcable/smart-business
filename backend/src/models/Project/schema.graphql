@@ -1,0 +1,19 @@
+type Query { 
+    getListProject: [Project]!
+    getManyProject(ids: [Int]!): [Project]!
+    # getOneCost(id: Int): Cost!
+}
+
+type Mutation { 
+    createProject(input: ProjectCreateInput!): Project!
+    deleteManyCost(ids: [Int]!): [Cost]!
+}
+
+input ProjectCreateInput { 
+    name:           String!
+}
+
+type Project {
+    id:             Int
+    name:           String
+}

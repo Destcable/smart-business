@@ -1,0 +1,21 @@
+type Query { 
+    getListCategory: [Category]!
+    # getOneCost(id: Int): Cost!
+    getManyCategory(ids: [Int]!): [Category]!
+}
+
+type Mutation { 
+    createCategory(input: CategoryCreateInput!): Category!
+    deleteManyCategory(ids: [Int]!): [Category]!
+}
+
+input CategoryCreateInput { 
+    for:            String!
+    name:           String!
+}
+
+type Category {
+    id:             Int
+    for:            String!
+    name:           String!
+}
