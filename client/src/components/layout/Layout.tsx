@@ -1,7 +1,7 @@
 import Sidebar from '@components/layout/Sidebar';
 import { makeStyles } from '@fluentui/react-components';
 import Content from './Content';
-import { ReactNode, FC } from 'react';
+import { Outlet } from 'react-router-dom';
 
 const useStyles = makeStyles({
     layout: {
@@ -11,17 +11,13 @@ const useStyles = makeStyles({
     }
 });
 
-interface LayoutProps { 
-    children: ReactNode
-}
-
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout = () => {
     const styles = useStyles();
     return (
         <div className={styles.layout}>
             <Sidebar />
             <Content>
-                {children}
+                <Outlet />
             </Content>
         </div>
     )

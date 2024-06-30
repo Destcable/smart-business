@@ -23,7 +23,8 @@
 
     "paths": {
       "@resources/*": ["src/resources/*"],
-      "@components/*": ["src/components/*"]
+      "@components/*": ["src/components/*"],
+      "@services/*": ["src/services/*"]
     }
   },
   "include": ["src"],

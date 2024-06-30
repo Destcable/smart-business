@@ -11,15 +11,12 @@
   },
   "dependencies": {
     "@apollo/client": "3.10.5",
-    "@emotion/react": "11.11.4",
-    "@emotion/styled": "11.11.5",
     "@fluentui/react-components": "9.54.2",
-    "@mui/material": "5.15.20",
+    "@fluentui/react-icons": "2.0.247",
     "graphql": "16.8.2",
     "react": "18.2.0",
-    "react-admin": "4.16.19",
     "react-dom": "18.2.0",
-    "react-router-dom": "^6.24.0"
+    "react-router-dom": "6.24.0"
   },
   "devDependencies": {
     "@types/react": "18.2.66",
