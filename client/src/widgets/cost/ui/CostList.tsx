@@ -4,8 +4,12 @@ import renderTableBodyOfColumns from "@shared/utils/renderTableBodyOfColumns";
 import { useState } from "react";
 
 const columns = [
-    { columnKey: "dateCost", label: "dateCost" },
-    { columnKey: "amount", label: "amount"}
+    { columnKey: "dateCost", label: "Дата транзакции" },
+    { columnKey: "category.name", label: "Категория"},
+    { columnKey: "counterparty.name", label: "Контрагент"},
+    { columnKey: "project.name", label: "Проект"},
+    { columnKey: "amount", label: "Сумма"},
+    { columnKey: "description", label: "Описание"}
 ];
 
 const CostList = () => {

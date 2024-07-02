@@ -5,7 +5,11 @@ import CostList from "@widgets/cost/ui/CostList";
 
 const CostDataList = () => { 
     return <>
-        <Title>Расходы: Просмотр данных</Title>
+        <Title>Таблица: Расходы</Title>
+        <p>Таблица Расходы: предназначена для управления данными 
+            о расходах компании. Она предоставляет пользователям возможность 
+            просматривать, фильтровать, сортировать, редактировать и добавлять
+            новые записи о расходах.</p>
         <Button appearance="primary" icon={<AddRegular />}>Добавить</Button>
         <CostList />
     </>
