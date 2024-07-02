@@ -1,6 +1,6 @@
 import getCostList from "@entities/cost/api/getCostList";
 import CostTable from "@features/costData/ui/CostTable";
-import { TableCell, TableRow, TableSelectionCell } from "@fluentui/react-components";
+import renderTableBodyOfColumns from "@shared/utils/renderTableBodyOfColumns";
 import { useState } from "react";
 
 const columns = [
@@ -18,19 +18,7 @@ const CostList = () => {
     if (data) {
         return (
             <CostTable columns={columns}>
-                {data.map((item: any, index: number) => (
-                    <TableRow key={index}>
-                        <TableSelectionCell
-                            // checked={selected}
-                            checkboxIndicator={{ "aria-label": "Select row" }}
-                        />
-                        {columns.map((column: any) => (
-                            <TableCell key={column.columnKey}>
-                                {item[column.columnKey]}
-                            </TableCell>
-                        ))}
-                    </TableRow>
-                ))}
+                {renderTableBodyOfColumns(columns, data)}
             </CostTable>
         )
     }
