@@ -1,7 +1,7 @@
 import { Button } from "@fluentui/react-components";
 import { AddRegular } from "@fluentui/react-icons";
 import Title from "@shared/ui/Title/Title";
-import CostList from "@widgets/cost/ui/CostList";
+import CostDataTable from "@widgets/cost/ui/CostDataTable";
 
 const CostDataList = () => { 
     return <>
@@ -11,7 +11,7 @@ const CostDataList = () => {
             просматривать, фильтровать, сортировать, редактировать и добавлять
             новые записи о расходах.</p>
         <Button appearance="primary" icon={<AddRegular />}>Добавить</Button>
-        <CostList />
+        <CostDataTable />
     </>
 };
 

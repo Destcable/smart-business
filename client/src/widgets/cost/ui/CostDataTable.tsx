@@ -1,6 +1,6 @@
 import getCostList from "@entities/cost/api/getCostList";
-import CostTable from "@features/costData/ui/CostTable";
-import renderTableBodyOfColumns from "@shared/utils/renderTableBodyOfColumns";
+import Table from "@shared/ui/Table/Table";
+import TableBody from "@shared/ui/Table/TableBody";
 import { useState } from "react";
 
 const columns = [
@@ -12,7 +12,7 @@ const columns = [
     { columnKey: "description", label: "Описание"}
 ];
 
-const CostList = () => {
+const CostDataTable = () => {
     const [data, setData] = useState<any>(null);
 
     getCostList().then((cost) => {
@@ -21,11 +21,11 @@ const CostList = () => {
 
     if (data) {
         return (
-            <CostTable columns={columns}>
-                {renderTableBodyOfColumns(columns, data)}
-            </CostTable>
+            <Table columns={columns}>
+                <TableBody columns={columns} data={data}/>
+            </Table>
         )
     }
 };
 
-export default CostList;
+export default CostDataTable;
