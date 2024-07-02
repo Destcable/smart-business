@@ -1,9 +1,9 @@
 import { lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import { FluentProvider, webLightTheme } from '@fluentui/react-components';
-import './global.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from '@shared/ui/Layout/Layout';
+import '@app/styles/global.css'
 
 const root = createRoot(document.getElementById('root')!);
 

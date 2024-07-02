@@ -9,7 +9,8 @@ export default defineConfig({
       '@resources': '/src/resources',
       '@components': '/src/components',
       '@services': '/src/services',
-      '@shared': '/src/shared'
+      '@shared': '/src/shared',
+      '@app': '/src/app'
     }
   },
 })

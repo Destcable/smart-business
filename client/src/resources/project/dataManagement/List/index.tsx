@@ -1,6 +1,6 @@
 import { Button, Table, TableBody, TableCell, TableHeader, TableHeaderCell, TableRow, TableSelectionCell } from "@fluentui/react-components";
 import { AddRegular } from "@fluentui/react-icons";
-import api from "@services/api";
+import api from "@shared/api";
 import React, { useEffect, useState } from "react";
 
 const columns = [
