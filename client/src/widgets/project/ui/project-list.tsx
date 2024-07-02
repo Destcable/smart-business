@@ -10,8 +10,8 @@ const ProjectList = () => {
     });
 
     if (data.length > 0) {
-        return data.map(() => {
-            return <ProjectCard />
+        return data.map((project: any) => {
+            return <ProjectCard name={project.name} />
         })
 
     }

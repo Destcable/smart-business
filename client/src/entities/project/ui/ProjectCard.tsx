@@ -9,13 +9,12 @@ import {
     CardHeader,
 } from "@fluentui/react-components";
 import { MoreHorizontal20Regular } from "@fluentui/react-icons";
+import resolveAsset from "../lib/resolveAsset";
+import { FC } from "react";
 
-const resolveAsset = (asset: string) => {
-    const ASSET_URL =
-        "https://raw.githubusercontent.com/microsoft/fluentui/master/packages/react-components/react-card/stories/src/assets/";
-
-    return `${ASSET_URL}${asset}`;
-};
+interface ProjectCardProps { 
+    name: string
+}
 
 const useStyles = makeStyles({
     main: {
@@ -52,7 +51,7 @@ const useStyles = makeStyles({
     text: { margin: "0" },
 });
 
-const ProjectCard = () => {
+const ProjectCard: FC<ProjectCardProps> = ({ name }) => {
     const styles = useStyles();
     
     return (
@@ -67,7 +66,7 @@ const ProjectCard = () => {
                 </CardPreview>
 
                 <CardHeader
-                    header={<Text weight="semibold">App Name</Text>}
+                    header={<Text weight="semibold">{name}</Text>}
                     description={
                         <Caption1 className={styles.caption}>Developer</Caption1>
                     }
