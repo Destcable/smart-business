@@ -33,7 +33,7 @@ const Sidebar: React.FC = () => {
                     <Tree>
 
                         <TreeItem itemType="leaf">
-                            <NavLink to="/projects/data-management" className={styles.link}>
+                            <NavLink to="/project/data" className={styles.link}>
                                 <TreeItemLayout>Управление данными</TreeItemLayout>
                             </NavLink>
                         </TreeItem>

@@ -10,7 +10,7 @@ const router = createBrowserRouter([
         element: <Layout />,
         children: [
             {
-                path: 'projects/data-management',
+                path: 'project/data',
                 element: <ProjectDataManagementList />,
             },
         ],
