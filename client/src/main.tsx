@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { FluentProvider, webLightTheme } from '@fluentui/react-components';
 import './global.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from '@components/layout/Layout';
+import Layout from '@shared/ui/Layout/Layout';
 
 const root = createRoot(document.getElementById('root')!);
 

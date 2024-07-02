@@ -1,8 +1,8 @@
-import Sidebar from '@components/layout/Sidebar';
-import { makeStyles } from '@fluentui/react-components';
-import Content from './Content';
-import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import Content from './Content';
+import Sidebar from './Sidebar';
+import { makeStyles } from '@fluentui/react-components';
+import { Outlet } from 'react-router-dom';
 
 const useStyles = makeStyles({
     layout: {
