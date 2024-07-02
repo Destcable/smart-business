@@ -2,6 +2,7 @@ import Sidebar from '@components/layout/Sidebar';
 import { makeStyles } from '@fluentui/react-components';
 import Content from './Content';
 import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 
 const useStyles = makeStyles({
     layout: {
@@ -17,7 +18,9 @@ const Layout = () => {
         <div className={styles.layout}>
             <Sidebar />
             <Content>
-                <Outlet />
+                <Suspense fallback={<h1>Loading...</h1>}>
+                    <Outlet />
+                </Suspense>
             </Content>
         </div>
     )

@@ -1,11 +1,13 @@
+import { lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import { FluentProvider, webLightTheme } from '@fluentui/react-components';
 import './global.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { ProjectDataManagementList } from '@resources/project';
 import Layout from '@components/layout/Layout';
 
 const root = createRoot(document.getElementById('root')!);
+
+const ProjectDataManagementList = lazy(() => import("@resources/project/dataManagement/List"));
 
 const router = createBrowserRouter([
     {
