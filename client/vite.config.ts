@@ -13,6 +13,7 @@ export default defineConfig({
       '@entities': '/src/entities',
       '@widgets': '/src/widgets',
       '@pages': '/src/pages',
+      "@features": '/src/features',
       '@app': '/src/app'
     }
   },

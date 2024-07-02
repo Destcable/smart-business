@@ -1,3 +1,4 @@
+import resolveAsset from "@entities/project/lib/resolveAsset";
 import {
     makeStyles,
     Button,
@@ -9,7 +10,6 @@ import {
     CardHeader,
 } from "@fluentui/react-components";
 import { MoreHorizontal20Regular } from "@fluentui/react-icons";
-import resolveAsset from "../lib/resolveAsset";
 import { FC } from "react";
 
 interface ProjectCardProps { 

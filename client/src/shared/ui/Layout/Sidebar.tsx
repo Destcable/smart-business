@@ -46,8 +46,10 @@ const Sidebar: React.FC = () => {
                 <TreeItem itemType="branch">
                     <TreeItemLayout>Расходы</TreeItemLayout>
                     <Tree>
-                        <TreeItem itemType="leaf">
-                            <TreeItemLayout>Управление данными</TreeItemLayout>
+                    <TreeItem itemType="leaf">
+                            <NavLink to="/cost/data" className={styles.link}>
+                                <TreeItemLayout>Управление данными</TreeItemLayout>
+                            </NavLink>
                         </TreeItem>
                         <TreeItem itemType="leaf">
                             <TreeItemLayout>Настройки</TreeItemLayout>

@@ -1,7 +1,7 @@
 import { Button } from "@fluentui/react-components";
 import { AddRegular } from "@fluentui/react-icons";
 import Title from "@shared/ui/Title/Title";
-import ProjectList from "@widgets/project/ui/project-list";
+import ProjectList from "@widgets/project/ui/ProjectList";
 
 const ProjectDataList = () => { 
     return ( <> 

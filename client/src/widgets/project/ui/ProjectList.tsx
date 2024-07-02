@@ -1,6 +1,6 @@
 import getProjectList from "@entities/project/api/getProjectList";
-import ProjectCard from "@entities/project/ui/ProjectCard";
 import { useState } from "react";
+import ProjectCard from "@features/projectData/ui/ProjectCard";
 
 const ProjectList = () => {
     const [data, setData] = useState([]);
@@ -10,8 +10,8 @@ const ProjectList = () => {
     });
 
     if (data.length > 0) {
-        return data.map((project: any) => {
-            return <ProjectCard name={project.name} />
+        return data.map((project: any, index) => {
+            return <ProjectCard key={index} name={project.name} />
         })
 
     }
