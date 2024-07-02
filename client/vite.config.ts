@@ -10,6 +10,9 @@ export default defineConfig({
       '@components': '/src/components',
       '@services': '/src/services',
       '@shared': '/src/shared',
+      '@entities': '/src/entities',
+      '@widgets': '/src/widgets',
+      '@pages': '/src/pages',
       '@app': '/src/app'
     }
   },

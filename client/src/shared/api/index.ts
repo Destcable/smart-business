@@ -1,6 +1,5 @@
 import apiClient from "./apiClient";
 import { getList } from "./gql/project"
-import parseData from "./parseData";
 
 export default function api(resource: string) {
     return { 
@@ -17,7 +16,7 @@ export default function api(resource: string) {
                     query: query,
                     variables: {}
                 });
-
+                
                 if (!data || !data.items) {
                     throw new Error('Invalid response format');
                 }
@@ -27,17 +26,6 @@ export default function api(resource: string) {
                 console.error('Error fetching data:', error);
                 throw error;
             }
-
-            return apiClient.query({
-                query: query,
-                variables: {}
-            }).then(data => { 
-                    return {
-                        data: data.data.items.map(parseData), 
-                        total: data.data.items.length
-                    };
-                }
-            );
 
         }
     }
