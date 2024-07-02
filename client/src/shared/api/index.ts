@@ -1,6 +1,7 @@
 import apiClient from "./apiClient";
 import { getList as GET_PROJECT_LIST } from "./gql/project"
 import { getList as GET_COST_LIST } from "./gql/cost"
+import { getList as GET_COST_CATEGORY_LIST } from "./gql/category"
 
 export default function api(resource: string) {
     return { 
@@ -12,6 +13,9 @@ export default function api(resource: string) {
                     break;
                 case 'cost/data':
                     query = GET_COST_LIST;
+                    break;
+                case 'cost/category':
+                    query = GET_COST_CATEGORY_LIST;
                     break;
             }
 
