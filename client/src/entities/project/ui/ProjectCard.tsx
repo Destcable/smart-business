@@ -51,7 +51,7 @@ const useStyles = makeStyles({
     text: { margin: "0" },
 });
 
-const ProjectCard: FC<ProjectCardProps> = ({ name }) => {
+export const ProjectCard: FC<ProjectCardProps> = ({ name }) => {
     const styles = useStyles();
     
     return (
@@ -82,5 +82,3 @@ const ProjectCard: FC<ProjectCardProps> = ({ name }) => {
         </section>
     )
 };
-
-export default ProjectCard;
