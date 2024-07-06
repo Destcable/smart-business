@@ -1,3 +1,6 @@
+import { FC } from "react";
+import { useForm } from "react-hook-form"
+import { createCostCategorySettings } from "@entities/cost/api/createCostCategorySettings";
 import {
     Dialog,
     DialogTrigger,
@@ -11,7 +14,6 @@ import {
     Label,
     Input,
 } from "@fluentui/react-components";
-import { FC } from "react";
 
 const useStyles = makeStyles({
     root: {
@@ -30,6 +32,13 @@ export const CostSettingsCategoryCreate: FC<CostSettingsCategoryCreateProps> = (
 }) => {
     const styles = useStyles();
 
+    const { register, handleSubmit } = useForm()
+
+    const onSubmit = (data: any) => createCostCategorySettings({
+        for: "cost",
+        name: data.name
+    })
+
     return (
         <Dialog>
             <DialogTrigger disableButtonEnhancement>
@@ -42,14 +51,21 @@ export const CostSettingsCategoryCreate: FC<CostSettingsCategoryCreateProps> = (
                     <DialogContent>
                         <div className={styles.root}>
                             <Label>Наименование категории</Label>
-                            <Input />
+                            <Input {...register("name", { required: true })} />
                         </div>
                     </DialogContent>
                     <DialogActions>
                         <DialogTrigger disableButtonEnhancement>
                             <Button appearance="secondary">Закрыть</Button>
                         </DialogTrigger>
-                        <Button appearance="primary">Создать</Button>
+                        <DialogTrigger disableButtonEnhancement>
+                        <Button
+                            appearance="primary"
+                            onClick={handleSubmit(onSubmit)}
+                        >
+                            Создать
+                        </Button>
+                        </DialogTrigger>
                     </DialogActions>
                 </DialogBody>
             </DialogSurface>

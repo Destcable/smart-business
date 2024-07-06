@@ -3,6 +3,7 @@ import { getList as GET_PROJECT_LIST } from "./gql/project"
 import { getList as GET_COST_LIST } from "./gql/cost"
 import { getList as GET_COST_CATEGORY_LIST } from "./gql/category"
 
+import { create as ONE_CATEGORY_CREATE } from "./gql/category"
 export default function api(resource: string) {
     return { 
         getList: async () => { 
@@ -35,6 +36,22 @@ export default function api(resource: string) {
                 throw error;
             }
 
+        },
+        create: (data: any) => { 
+            let mutation: any;
+    
+        switch (resource) { 
+            case 'cost/category':
+            mutation = ONE_CATEGORY_CREATE;
+            break;
         }
+
+        return apiClient
+            .mutate({
+                mutation: mutation,
+                variables: { input: data },
+            }).then(data => { 
+                return { data: data.data.item, id: data.data.item.id } } );
+            }
     }
 }
