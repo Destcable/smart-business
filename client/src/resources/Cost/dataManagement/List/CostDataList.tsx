@@ -26,8 +26,8 @@ const CostDataList = () => {
             о расходах компании. Она предоставляет пользователям возможность
             просматривать, фильтровать, сортировать, редактировать и добавлять
             новые записи о расходах.</p>
-        <Button appearance="primary" icon={<AddRegular />}>Добавить</Button>
-        {data &&
+            <Button appearance="primary" icon={<AddRegular />}>Добавить</Button>
+            {data &&
             <Table columns={columns}>
                 <TableBody columns={columns} data={data} />
             </Table>
