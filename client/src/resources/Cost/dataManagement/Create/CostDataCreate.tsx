@@ -32,6 +32,7 @@ const CostDataCreate = () => {
             </Select>
             <Label>Сумма</Label>
             <Input
+                style={{ width: '100%' }}
                 contentBefore={
                     <Text size={400}>
                         ₽
@@ -43,6 +44,7 @@ const CostDataCreate = () => {
                     </Text>
                 }
             />
+            <Input style={{ width: '100%' }} />
         </form>
     </>
 };
