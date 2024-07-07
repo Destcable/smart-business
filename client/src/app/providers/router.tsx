@@ -2,7 +2,8 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import Layout from '@shared/ui/Layout/Layout';
 
-const ProjectDataList = lazy(() => import("@resources/Project/dataManagement/List/ProjectDataList"))
+const ProjectDataList = lazy(() => import("@resources/Project/dataManagement/List/ProjectDataList"));
+const CostSmartAnalysisList = lazy(() => import("@resources/Cost/smartAnalysis/List/CostSmartAnalysisList"))
 const CostDataList = lazy(() => import("@resources/Cost/dataManagement/List/CostDataList"));
 const CostSettingsList = lazy(() => import("@resources/Cost/settings/List/CostSettingsList"));
 
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
             {
                 path: 'cost/settings',
                 element: <CostSettingsList />,
+            },
+            {
+                path: 'cost/analysis',
+                element: <CostSmartAnalysisList />,
             },
         ],
     },
