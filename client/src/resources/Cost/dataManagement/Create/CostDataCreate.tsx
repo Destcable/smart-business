@@ -1,3 +1,4 @@
+import { Input, Label, Select, Text } from "@fluentui/react-components";
 import { DatePicker } from "@fluentui/react-datepicker-compat";
 import Title from "@shared/ui/Title/Title";
 
@@ -5,16 +6,44 @@ const CostDataCreate = () => {
     return <>
         <Title>Создание расхода</Title>
         <form>
-        <DatePicker
-            // minDate={minDate}
-            // maxDate={maxDate}
-            // formatDate={onFormatDate}
-            placeholder="Select a date..."
-            allowTextInput
-        // onValidationResult={(data) => setError(data.error)}
-        // className={styles.control}
-        />
-    </form>
+            <Label>Дата транзакции</Label>
+            <DatePicker
+                placeholder="Select a date..."
+                allowTextInput
+                style={{ width: '100%' }}
+            />
+            <Label>Категория</Label>
+            <Select>
+                <option>Red</option>
+                <option>Green</option>
+                <option>Blue</option>
+            </Select>
+            <Label>Контрагент</Label>
+            <Select>
+                <option>Red</option>
+                <option>Green</option>
+                <option>Blue</option>
+            </Select>
+            <Label>Проект</Label>
+            <Select>
+                <option>Red</option>
+                <option>Green</option>
+                <option>Blue</option>
+            </Select>
+            <Label>Сумма</Label>
+            <Input
+                contentBefore={
+                    <Text size={400}>
+                        ₽
+                    </Text>
+                }
+                contentAfter={
+                    <Text size={400}>
+                        .00
+                    </Text>
+                }
+            />
+        </form>
     </>
 };
 
