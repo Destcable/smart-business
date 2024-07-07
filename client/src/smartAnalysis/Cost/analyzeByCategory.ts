@@ -19,9 +19,36 @@ categorys.map(({ id: categoryId }) => dataCost
     .map(({ amount}) => categorysCost[categoryId].push(amount))
 );
 
+function amount_in_category(categorys: any) {
+    const copyCategorys = {...categorys};
 
-export function analyzeCostByCategory() { 
-    console.log(categorysCost)
+    for (const category in copyCategorys) {
+        const categoryAmounts = copyCategorys[category];
+
+        const summAmounts = categoryAmounts.reduce((acc: number, current: number) => acc + current, 0);
+        copyCategorys[category] = summAmounts;
+    }
+
+    return copyCategorys
+
 }
 
+function count_operations_in_category(categorys: any) { 
+    const copyCategorys = {...categorys};
 
+    for (const category in copyCategorys) {
+        const countOperations = copyCategorys[category].length;
+        copyCategorys[category] = countOperations        
+    }
+
+    return copyCategorys;
+}
+
+export const analyzeCostByCategory = { 
+    amounts: () => { 
+        return amount_in_category(categorysCost)
+    },
+    countOperations: () => { 
+        return count_operations_in_category(categorysCost)
+    }
+}
