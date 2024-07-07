@@ -10,11 +10,7 @@ const categorys = [
 const RenderAmountOperationsByCategory = lazy(() => import("./render/AmountOperationsByCategory"));
 const CountOperationsByCategory = lazy(() => import("./render/CountOperationsByCategory"));
 
-
-
 const CostSmartAnalysisList = () => {
-    // const countOperationsByCategory = analyzeCostByCategory(categorys).countOperations();
-
     return <Accordion collapsible>
         <AccordionItem value="1">
             <AccordionHeader>Сумма расходов по категориям</AccordionHeader>
