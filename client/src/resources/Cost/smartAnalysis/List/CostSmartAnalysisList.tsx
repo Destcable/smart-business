@@ -11,7 +11,7 @@ const RenderAmountOperationsByCategory = lazy(() => import("./render/AmountOpera
 const CountOperationsByCategory = lazy(() => import("./render/CountOperationsByCategory"));
 
 const CostSmartAnalysisList = () => {
-    return <Accordion collapsible>
+    return <Accordion multiple>
         <AccordionItem value="1">
             <AccordionHeader>Сумма расходов по категориям</AccordionHeader>
             <AccordionPanel>
