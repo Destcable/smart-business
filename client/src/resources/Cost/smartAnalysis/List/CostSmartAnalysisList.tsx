@@ -1,16 +1,15 @@
+import getCostCategorySettingsList from "@entities/cost/api/getCostCategorySettingsList";
 import { Accordion, AccordionHeader, AccordionItem, AccordionPanel } from "@fluentui/react-components";
-import { lazy, Suspense } from "react";
-
-const categorys = [
-    { id: 1, name: "Зарплаты" },
-    { id: 2, name: "Штрафы" },
-    { id: 3, name: "Закупка" }
-];
+import { lazy, Suspense, useState } from "react";
 
 const RenderAmountOperationsByCategory = lazy(() => import("./render/AmountOperationsByCategory"));
 const CountOperationsByCategory = lazy(() => import("./render/CountOperationsByCategory"));
 
 const CostSmartAnalysisList = () => {
+    const [categorys, setCategorys] = useState<any>(null);
+
+    getCostCategorySettingsList().then(cost => setCategorys(cost));
+
     return <Accordion multiple>
         <AccordionItem value="1">
             <AccordionHeader>Сумма расходов по категориям</AccordionHeader>
