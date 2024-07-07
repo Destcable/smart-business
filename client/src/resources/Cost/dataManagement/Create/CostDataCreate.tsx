@@ -1,23 +1,35 @@
-import { Input, Label, Select, Text } from "@fluentui/react-components";
+import getCostCategorySettingsList from "@entities/cost/api/getCostCategorySettingsList";
+import { Button, Input, Label, Select, Text } from "@fluentui/react-components";
 import { DatePicker } from "@fluentui/react-datepicker-compat";
 import Title from "@shared/ui/Title/Title";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { CategorysCostFieldSelect } from "./Fields/CategorysCostFieldSelect";
 
 const CostDataCreate = () => {
+    const { register, handleSubmit } = useForm()
+
+    const [dataCategory, setDataCategory] = useState<any>(null);
+
+    getCostCategorySettingsList().then(cost => setDataCategory(cost));
+
+    const onSubmit = (data: any) => console.log(data)
+
     return <>
         <Title>Создание расхода</Title>
-        <form>
+        <form onSubmit={handleSubmit(onSubmit)}>
             <Label>Дата транзакции</Label>
             <DatePicker
+                {...register("dateCost", { required: true })}
                 placeholder="Select a date..."
                 allowTextInput
                 style={{ width: '100%' }}
             />
             <Label>Категория</Label>
-            <Select>
-                <option>Red</option>
-                <option>Green</option>
-                <option>Blue</option>
-            </Select>
+            <CategorysCostFieldSelect 
+                categorys={dataCategory}
+                register={register("categoryId", { required: true })}
+            />
             <Label>Контрагент</Label>
             <Select>
                 <option>Red</option>
@@ -44,7 +56,9 @@ const CostDataCreate = () => {
                     </Text>
                 }
             />
+            <Label>Описание</Label>
             <Input style={{ width: '100%' }} />
+            <Button type="submit" appearance="primary">Создать</Button>
         </form>
     </>
 };
