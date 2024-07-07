@@ -1,22 +1,42 @@
 import { Accordion, AccordionHeader, AccordionItem, AccordionPanel } from "@fluentui/react-components";
 import { analyzeCostByCategory } from "../../../../smartAnalysis/Cost/analyzeByCategory";
 
+const categorys = [
+    { id: 1, name: "Зарплаты" },
+    { id: 2, name: "Штрафы" },
+    { id: 3, name: "Закупка" }
+];
+
+
 const CostSmartAnalysisList = () => {
-    console.log( 
-        analyzeCostByCategory.amounts(),
-        analyzeCostByCategory.countOperations()
-    )
+    const amountOperationsByCategory = analyzeCostByCategory(categorys).amounts();
+    const countOperationsByCategory = analyzeCostByCategory(categorys).countOperations();
+
     return <Accordion collapsible>
         <AccordionItem value="1">
-            <AccordionHeader>Анализ расходов по категориям</AccordionHeader>
+            <AccordionHeader>Сумма расходов по категориям</AccordionHeader>
             <AccordionPanel>
-                <div>Accordion Panel 1</div>
+                {Object.entries(amountOperationsByCategory).map(([key, value]) => {
+                    const category = categorys.filter(cat => cat.id == key);
+                    console.log(category)
+                    return (
+                        <p key={key}>Категория {category[0].name}: {value}</p>
+                    )
+                }
+                )}
             </AccordionPanel>
         </AccordionItem>
         <AccordionItem value="2">
-            <AccordionHeader>Анализ количества операций по категориям</AccordionHeader>
+            <AccordionHeader>Количества операций по категориям</AccordionHeader>
             <AccordionPanel>
-                <div>Accordion Panel 1</div>
+                {Object.entries(countOperationsByCategory).map(([key, value]) => {
+                    const category = categorys.filter(cat => cat.id == key);
+                    console.log(category)
+                    return (
+                        <p key={key}>Категория {category[0].name}: {value}</p>
+                    )
+                }
+                )}
             </AccordionPanel>
         </AccordionItem>
     </Accordion>
