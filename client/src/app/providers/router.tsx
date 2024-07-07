@@ -6,6 +6,7 @@ const ProjectDataList = lazy(() => import("@resources/Project/dataManagement/Lis
 const CostSmartAnalysisList = lazy(() => import("@resources/Cost/smartAnalysis/List/CostSmartAnalysisList"))
 const CostDataList = lazy(() => import("@resources/Cost/dataManagement/List/CostDataList"));
 const CostSettingsList = lazy(() => import("@resources/Cost/settings/List/CostSettingsList"));
+const CostDataCreate = lazy(() => import("@resources/Cost/dataManagement/Create/CostDataCreate"));
 
 const router = createBrowserRouter([
     {
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
             {
                 path: 'cost/data',
                 element: <CostDataList />,
+            },
+            {
+                path: 'cost/data/create',
+                element: <CostDataCreate />,
             },
             {
                 path: 'cost/settings',

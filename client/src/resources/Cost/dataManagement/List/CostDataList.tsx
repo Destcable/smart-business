@@ -5,6 +5,7 @@ import Table from "@shared/ui/Table/Table";
 import TableBody from "@shared/ui/Table/TableBody";
 import Title from "@shared/ui/Title/Title";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const columns = [
     { columnKey: "dateCost", label: "Дата транзакции" },
@@ -20,14 +21,18 @@ const CostDataList = () => {
 
     getCostList().then((cost) => setData(cost));
 
+    const iconAddRegular = <AddRegular />
+
     return <>
         <Title>Таблица: Расходы</Title>
         {/* <p>Таблица Расходы: предназначена для управления данными
             о расходах компании. Она предоставляет пользователям возможность
             просматривать, фильтровать, сортировать, редактировать и добавлять
             новые записи о расходах.</p> */}
-            <Button appearance="primary" icon={<AddRegular />}>Добавить</Button>
-            {data &&
+        <NavLink to="/cost/data/create">
+            <Button appearance="primary" icon={iconAddRegular}>Добавить</Button>
+        </NavLink>
+        {data &&
             <Table columns={columns}>
                 <TableBody columns={columns} data={data} />
             </Table>
