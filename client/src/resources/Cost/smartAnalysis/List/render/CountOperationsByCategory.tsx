@@ -12,7 +12,6 @@ const CountOperationsByCategory: FC<CountOperationsByCategoryProps> = ({
 
     return Object.entries(amountOperationsByCategory).map(([key, value]) => {
         const category = categorys.filter((cat:any) => cat.id == key);
-        console.log(category)
         return (
             <p key={key}>Категория {category[0].name}: {value}</p>
         )
