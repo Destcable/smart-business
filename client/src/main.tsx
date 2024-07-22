@@ -6,9 +6,8 @@ import '@app/styles/global.css'
 
 const root = createRoot(document.getElementById('root')!);
 
-
 root.render(
-    <FluentProvider theme={webLightTheme}>
-        <RouterProvider router={router} />
-    </FluentProvider>,
+        <FluentProvider theme={webLightTheme}>
+            <RouterProvider router={router} />
+        </FluentProvider>
 );
