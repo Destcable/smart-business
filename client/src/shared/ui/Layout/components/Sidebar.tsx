@@ -1,5 +1,5 @@
 import { Tree, TreeItem, TreeItemLayout } from "@fluentui/react-components";
-import { useStyles } from "../styles/sidbar.styles";
+import { useStyles } from "../styles/sidebar.styles";
 import { SidebarWrapperItemTypeLeaf } from "./SidebarWrapperItemTypeLeaf";
 import { SidebarWrapperItemTypeBranch } from "./SidebarWrapperItemTypeBranch";
 

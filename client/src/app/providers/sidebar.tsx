@@ -5,6 +5,11 @@ export const sidebarData = [
         type: "leaf"
     },
     {
+        name: "Платформа документов",
+        link: "/docplatform/main",
+        type: "leaf"
+    },
+    {
         name: "Проекты",
         link: "",
         type: "branch",

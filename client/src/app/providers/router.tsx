@@ -7,6 +7,7 @@ const CostSmartAnalysisList = lazy(() => import("@resources/Cost/smartAnalysis/L
 const CostDataList = lazy(() => import("@resources/Cost/dataManagement/List/CostDataList"));
 const CostSettingsList = lazy(() => import("@resources/Cost/settings/List/CostSettingsList"));
 const CostDataCreate = lazy(() => import("@resources/Cost/dataManagement/Create/CostDataCreate"));
+const DocPlatformExtansionMain = lazy(() => import("@app/extensions/docPlatform/DocPlatformExtansionMain"));
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
                 path: 'cost/analysis',
                 element: <CostSmartAnalysisList />,
             },
+            {
+                path: 'docplatform/main',
+                element: <DocPlatformExtansionMain />
+            }
         ],
     },
 ]);
