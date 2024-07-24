@@ -10,6 +10,11 @@ export const sidebarData = [
         type: "leaf"
     },
     {
+        name: "Расширения",
+        link: "/extensions",
+        type: "leaf"
+    },
+    {
         name: "Проекты",
         link: "",
         type: "branch",
@@ -38,5 +43,5 @@ export const sidebarData = [
                 link: "/cost/settings"
             }
         ]
-    }
+    },
 ]
