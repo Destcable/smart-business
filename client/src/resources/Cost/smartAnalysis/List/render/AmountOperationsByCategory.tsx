@@ -8,7 +8,8 @@ interface AmountOperationsByCategoryProps {
 const AmountOperationsByCategory: FC<AmountOperationsByCategoryProps> = ({ 
     categorys
 }) => { 
-    const amountOperationsByCategory = analyzeCostByCategory(categorys).amounts();
+    const amountOperationsByCategory = analyzeCostByCategory(categorys)?.amounts();
+    if (!amountOperationsByCategory) return <span>Информация отсутствует</span>
 
     return Object.entries(amountOperationsByCategory).map(([key, value]) => {
         const category = categorys.filter((cat:any) => cat.id == key);

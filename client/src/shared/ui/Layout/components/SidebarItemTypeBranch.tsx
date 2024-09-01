@@ -9,7 +9,7 @@ interface SidebarWrapperItemTypeBranchProps {
     styles: any
 }
 
-export const SidebarWrapperItemTypeBranch: FC<SidebarWrapperItemTypeBranchProps> = ({
+export const SidebarItemTypeBranch: FC<SidebarWrapperItemTypeBranchProps> = ({
     childrenLink,
     childrenName,
     styles

@@ -8,7 +8,7 @@ const CostDataList = lazy(() => import("@resources/Cost/dataManagement/List/Cost
 const CostSettingsList = lazy(() => import("@resources/Cost/settings/List/CostSettingsList"));
 const CostDataCreate = lazy(() => import("@resources/Cost/dataManagement/Create/CostDataCreate"));
 const DocPlatformExtansionMain = lazy(() => import("@app/extensions/docPlatform/DocPlatformExtansionMain"));
-const ExtensionsList = lazy(() => import("@resources/Extensions/ExtensionsList"))
+const ExtensionsList = lazy(() => import("@pages/Extensions/ExtensionsList"))
 
 const router = createBrowserRouter([
     {

@@ -31,7 +31,8 @@ function count_operations_in_category(categorys: any) {
 }
 
 export const analyzeCostByCategory = (categorys: any) => { 
-
+    if (!categorys) return null;
+     
     categorys.map(({ id }: any) => categorysCost[id] = [])
 
     categorys.map(({ id: categoryId }: any) => dataCost

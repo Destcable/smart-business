@@ -1,8 +1,8 @@
-import { Tree, TreeItem, TreeItemLayout } from "@fluentui/react-components";
+import { Tree } from "@fluentui/react-components";
 import { useStyles } from "../styles/sidebar.styles";
 import { SidebarWrapperItemTypeLeaf } from "./SidebarWrapperItemTypeLeaf";
-import { SidebarWrapperItemTypeBranch } from "./SidebarWrapperItemTypeBranch";
-
+import { SidebarItemTypeBranch } from "./SidebarItemTypeBranch";
+import { SidebarItemTypeBranchWrapper } from "./SidebarItemTypeBranchWrapper";
 
 interface SidebarProps {
     sidebarData: any
@@ -20,18 +20,15 @@ export const Sidebar: React.FC<SidebarProps> = ({
                     key={index} name={item.name}
                     link={item.link} styles={styles}
                 />
-                if (item.type === "branch") return <TreeItem itemType="branch">
-                    <TreeItemLayout>{item.name}</TreeItemLayout>
-                    <Tree>
-                        {item.children?.map((childrenItem: any) =>
-                            <SidebarWrapperItemTypeBranch
-                                name={item.name} childrenLink={childrenItem.link}
-                                styles={styles} childrenName={childrenItem.name}
-                            />
-                        )
-                        }
-                    </Tree>
-                </TreeItem>
+                if (item.type === "branch") return <SidebarItemTypeBranchWrapper name={item.name}>
+                    {item.children?.map((childrenItem: any, index: number) =>
+                        <SidebarItemTypeBranch key={index}
+                            name={item.name} childrenLink={childrenItem.link}
+                            styles={styles} childrenName={childrenItem.name}
+                        />
+                    )
+                    }
+                </SidebarItemTypeBranchWrapper>
             })}
         </Tree>
     </div>

@@ -19,7 +19,7 @@ export const sidebarData = [
         link: "",
         type: "branch",
         children: [
-            { 
+            {
                 name: "Управление данными",
                 link: "/project/data"
             }
