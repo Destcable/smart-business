@@ -9,6 +9,7 @@ const CostSettingsList = lazy(() => import("@resources/Cost/settings/List/CostSe
 const CostDataCreate = lazy(() => import("@resources/Cost/dataManagement/Create/CostDataCreate"));
 const DocPlatformExtansionMain = lazy(() => import("@app/extensions/docPlatform/DocPlatformExtansionMain"));
 const ExtensionsList = lazy(() => import("@pages/Extensions/ExtensionsList"))
+const AuthPage = lazy(() => import("@pages/Auth/AuthPage"))
 
 const router = createBrowserRouter([
     {
@@ -42,9 +43,13 @@ const router = createBrowserRouter([
             { 
                 path: 'extensions',
                 element: <ExtensionsList />
-            }
+            },
         ],
     },
+    {
+        path: 'auth',
+        element: <AuthPage />
+    }
 ]);
 
 export default router;
